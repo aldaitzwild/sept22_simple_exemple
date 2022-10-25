@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Super Selection Top Tendance !!{% endblock %}
+
+{% block content %}
+
+    <section class="container m-5">
+        <div class="row">
+
+        {% for product in products %}
+
+            {% include "Shared/_product_card.html.twig" %}
+
+        {% endfor %}
+
+
+
+        {{ include ("Shared/_product_card.html.twig", {product: products[0]}) }}
+
+
+        </div>
+    </section>
+
+{% endblock %}
