@@ -1,3 +1,8 @@
+DROP DATABASE simple_exemple;
+
+CREATE DATABASE simple_exemple;
+USE simple_exemple;
+
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
