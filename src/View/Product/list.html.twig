@@ -11,6 +11,8 @@
                 <tr>
                     <th>Nom</th>
                     <th>Prix</th>
+                    <th>Est super !</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +21,10 @@
                     <tr>
                         <td>{{ product.name }}</td>
                         <td>{{ product.price }}</td>
+                        <td>{{ product.isSuper }}</td>
+                        <td> {% if product.isSuper == 0 %}
+                            <a href="/products/issuper?id={{ product.id }}">Est super</a>
+                        {% endif %}</td>
                     </tr>
                 {% endfor %}
 

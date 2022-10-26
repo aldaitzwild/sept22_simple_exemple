@@ -15,4 +15,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'products' => ['ProductController', 'list',],
     'products/select' => ['ProductController', 'showSelection',],
+    'products/issuper' => ['ProductController', 'changeToSuper', ['id']],
 ];

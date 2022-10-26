@@ -17,8 +17,16 @@ class ProductController extends AbstractController
     public function showSelection(): string
     {
         $productManager = new ProductManager();
-        $products = $productManager->selectAll();
+        $superProducts = $productManager->selectAllTheSuperProducts();
 
-        return $this->twig->render('Product/selection.html.twig', ['products' => $products]);
+        return $this->twig->render('Product/selection.html.twig', ['products' => $superProducts]);
+    }
+
+    public function changeToSuper(int $id): string
+    {
+        $productManager = new ProductManager();
+        $productManager->updateAsSuper($id);
+
+        return $this->list();
     }
 }
