@@ -16,4 +16,5 @@ return [
     'products' => ['ProductController', 'list',],
     'products/select' => ['ProductController', 'showSelection',],
     'products/issuper' => ['ProductController', 'changeToSuper', ['id']],
+    'products/add' => ['ProductController', 'add'],
 ];

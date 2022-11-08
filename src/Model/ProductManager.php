@@ -23,4 +23,15 @@ class ProductManager extends AbstractManager
         $statement->bindValue(':id', $id, PDO::PARAM_INT);
         $statement->execute();
     }
+
+    public function insert(array $product): void
+    {
+        $query = "INSERT INTO " . self::TABLE . " (name, price)
+                VALUES (:name, :price)";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindValue(':name', $product['name'], PDO::PARAM_STR);
+        $stmt->bindValue(':price', $product['price'], PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
 }
