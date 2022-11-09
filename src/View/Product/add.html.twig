@@ -16,6 +16,15 @@
             </p>
 
             <p>
+                <label for="category" class="form-label">Catégorie</label>
+                <select class="form-select" name="category" id="category">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+
+            <p>
                 <button class="btn btn-primary">Envoyer</button>
             </p>
         </form>

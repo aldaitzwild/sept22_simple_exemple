@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\CategoryManager;
 use App\Model\ProductManager;
 
 class ProductController extends AbstractController
@@ -9,7 +10,7 @@ class ProductController extends AbstractController
     public function list(): string
     {
         $productManager = new ProductManager();
-        $products = $productManager->selectAll();
+        $products = $productManager->selectAllWithCategory();
 
         return $this->twig->render('Product/list.html.twig', ['products' => $products]);
     }
@@ -41,6 +42,10 @@ class ProductController extends AbstractController
             header('Location: /products');
             return null;
         }
-        return $this->twig->render('Product/add.html.twig');
+
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
+
+        return $this->twig->render('Product/add.html.twig', ['categories' => $categories]);
     }
 }
