@@ -26,7 +26,10 @@
                         <td>{{ product.isSuper }}</td>
                         <td> {% if product.isSuper == 0 %}
                             <a href="/products/issuper?id={{ product.id }}">Est super</a>
-                        {% endif %}</td>
+                        {% endif %}
+                        |
+                            <a href="/basket/add?id={{ product.id }}">Commander</a>
+                        </td>
                     </tr>
                 {% endfor %}
 

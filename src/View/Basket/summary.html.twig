@@ -1,0 +1,16 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <h1>Recap de commande</h1>
+
+    <ul>
+        {% for product in products %}
+            <li>{{product.name}} - {{product.price}}</li>
+        {% endfor %}
+        
+    </ul>
+
+    <hr>
+
+    <h2>le total : {{ total }}</h2>
+{% endblock %}
