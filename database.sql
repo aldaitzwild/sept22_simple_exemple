@@ -66,3 +66,37 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE Product (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(200),
+    price int,
+    category varchar(80),
+    isSuper bool
+);
+
+CREATE TABLE category (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(150)
+);
+
+INSERT INTO category (name)
+VALUES ('Jeux'), 
+	('LifeStyle'),
+	('Travail'),
+	('Technologie')
+;
+
+ALTER TABLE Product
+ADD COLUMN category_id INT NOT NULL default 1,
+ADD CONSTRAINT FK_Product_Category
+FOREIGN KEY (category_id)
+REFERENCES Category(id);
+
+CREATE TABLE orderList (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    summary TEXT,
+    total_amount INT,
+    creation_date datetime
+);

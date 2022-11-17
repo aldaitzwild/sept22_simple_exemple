@@ -19,4 +19,5 @@ return [
     'products/add' => ['ProductController', 'add'],
     'categories/show' => ['CategoryController', 'show', ['id']],
     'basket/add' => ['BasketController', 'add', ['id']],
+    'basket/finalize' => ['BasketController', 'finalize'],
 ];
